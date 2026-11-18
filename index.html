@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Etsy OAuth Redirect</title>
+<style>
+  body { font-family: sans-serif; max-width: 600px; margin: 60px auto; padding: 0 20px; }
+  .box { background: #f4f4f4; border: 1px solid #ccc; border-radius: 8px; padding: 16px; word-break: break-all; font-family: monospace; }
+  h2 { margin-top: 30px; }
+</style>
+</head>
+<body>
+<h1>Etsy authorization complete</h1>
+<p>Copy the value below (not into any chat — paste it only where your own setup instructions tell you to) and return to finish connecting.</p>
+
+<h2>code</h2>
+<div class="box" id="code">(none found in URL)</div>
+
+<h2>state</h2>
+<div class="box" id="state">(none found in URL)</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById('code').textContent = params.get('code') || '(none found in URL)';
+  document.getElementById('state').textContent = params.get('state') || '(none found in URL)';
+</script>
+</body>
+</html>
